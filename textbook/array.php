@@ -480,6 +480,62 @@ function average(WeekTemps $wt)
   print(round($total/count($wt->dataStore),2));
 }
 
+class Temps{
+  private $monthlyTemp = [];
+  public $weeklyTemp = [];
+
+  public function addToWeeklyTemp(Int $temp):void
+  {
+    if(count($this->weeklyTemp) >= 7)
+    {
+      print('You can\'t add more to the week');
+      $this->addToMonthlyTemp($this->weeklyTemp);
+      $this->weeklyTemp = [];
+      // print_r()
+      array_push($this->weeklyTemp,$temp);
+      return;
+    }else{
+      array_push($this->weeklyTemp,$temp);
+      print('added successfully');
+      return;
+    }
+  }
+
+  public function addToMonthlyTemp(Array $temp): void
+  {
+    if(count($this->monthlyTemp) >= 4)
+    {
+      print('You can\'t add more to the month');
+      $this->monthlyTemp[count($this->monthlyTemp)] = $temp;
+      return;
+    }else{
+      array_push($this->monthlyTemp,$temp);
+      print('added to monthly temps successfully');
+      return;
+    }
+  }
+  
+  public function displayTemps()
+  { 
+    print('This is weekly temps ');
+    print_r($this->weeklyTemp);
+    print('This is monthly temps ');
+    print_r($this->monthlyTemp);
+  }
+}
+
+$t = new Temps();
+$t->displayTemps();
+$t->addToWeeklyTemp(1);
+$t->addToWeeklyTemp(2);
+$t->addToWeeklyTemp(3);
+$t->addToWeeklyTemp(4);
+$t->addToWeeklyTemp(5);
+$t->addToWeeklyTemp(6);
+$t->addToWeeklyTemp(7);
+$t->addToWeeklyTemp(8);
+$t->displayTemps();
+
 
 
 
