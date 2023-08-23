@@ -524,21 +524,29 @@ class Temps{
   }
 }
 
-$t = new Temps();
-$t->displayTemps();
-$t->addToWeeklyTemp(1);
-$t->addToWeeklyTemp(2);
-$t->addToWeeklyTemp(3);
-$t->addToWeeklyTemp(4);
-$t->addToWeeklyTemp(5);
-$t->addToWeeklyTemp(6);
-$t->addToWeeklyTemp(7);
-$t->addToWeeklyTemp(8);
-$t->displayTemps();
+// $t = new Temps();
+// $t->displayTemps();
+// $t->addToWeeklyTemp(1);
+// $t->addToWeeklyTemp(2);
+// $t->addToWeeklyTemp(3);
+// $t->addToWeeklyTemp(4);
+// $t->addToWeeklyTemp(5);
+// $t->addToWeeklyTemp(6);
+// $t->addToWeeklyTemp(7);
+// $t->addToWeeklyTemp(8);
+// $t->displayTemps();
 
+function q()
+{
+  $a = 'popokpo';
+  $b = 'popo';
 
+  $count = strlen($b);
+  $new = str_split($a,$count);
+  print_r($new);
+}
 
-
+q();
 
 
 
